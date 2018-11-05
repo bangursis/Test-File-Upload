@@ -1,7 +1,7 @@
-<aura:component>
+<aura:component implements="flexipage:availableForAllPageTypes">
    <lightning:card title="Test">
         <lightning:input type="file" aura:id="files"/>
 
-        <ligtning:button label="btn" onclick="{!c.handleClick}"/>
-    </lightning:input> 
+        <lightning:button label="btn" onclick="{!c.handleClick}"/>
+    </lightning:card>
 </aura:component>	
