@@ -7,6 +7,7 @@
         $A.enqueueAction(action);
 
         action.setCallback(this, res => {
+            component.set(component.find(`img`).set(`src`, files.name));
             console.log(res.getState());
         })
                 
