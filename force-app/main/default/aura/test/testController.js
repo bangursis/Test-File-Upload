@@ -8,6 +8,7 @@
 
         action.setCallback(this, res => {
             console.log(res.getState());
+            component.find(`img`).set(`src`, v.name);
         })
                 
     },
