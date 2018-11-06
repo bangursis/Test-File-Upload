@@ -15,11 +15,15 @@
        fr.readAsDataURL(file);
     }, 
 
-    upload : function(component, file, fileContents){
+    upload : function(component, file1, fileContents){
         let action = component.get("c.test");
-        file = encodeURIComponent(fileContents);
+        let file = encodeURIComponent(fileContents);
 
         action.setParams({file});
         $A.enqueueAction(action);
+
+        action.setCallback(this, res => {
+            console.log(res.getState());
+        })
     }
 })
