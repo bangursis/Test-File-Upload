@@ -1,5 +1,5 @@
 ({
-    helperMethod : function() {
+    readFile : function(component, file) {
 
     }
 })

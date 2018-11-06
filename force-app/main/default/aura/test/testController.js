@@ -1,21 +1,7 @@
 ({
     handleClick: function(component, event, helper) {
-        let files = component.find("files").get("v.files")[0],
-            action = component.get("c.test");
-        
-        action.setParams({files});
-        $A.enqueueAction(action);
+        let file = component.find("files").get("v.files")[0];
 
-        action.setCallback(this, res => {
-            console.log(res.getState());
-            component.find(`img`).set(`src`, v.name);
-        })
-                
+        helper.readFile(component, file)                
     },
-
-    handleChange : function(component, event){
-        let files = event.getSource().getParams("v.files");
-
-        console.log(files);
-    }
 })
