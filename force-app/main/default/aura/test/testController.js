@@ -10,5 +10,11 @@
             console.log(res.getState());
         })
                 
+    },
+
+    handleChange : function(component, event){
+        let files = event.getSource().getParams("v.files");
+
+        console.log(files);
     }
 })
