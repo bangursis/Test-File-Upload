@@ -16,7 +16,7 @@
     }, 
 
     upload : function(component, file, fileContents){
-        let action = component.get("v.test");
+        let action = component.get("c.test");
         file = encodeURIComponent(fileContents);
 
         action.setParams({file});
