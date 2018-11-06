@@ -1,7 +1,7 @@
 ({
     handleClick: function(component, event, helper) {
         let files = component.find("files").get("v.files");
-        let action = component.get("c.testMethod");
+        let action = component.get("c.test");
         
         action.setParams({files});
         $A.enqueueAction(action);
