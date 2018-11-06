@@ -9,13 +9,13 @@
 
            fileContents = fileContents.substring(dataStart);
 
-           this.upload(component, file, fileContents);
+           this.upload(component, fileContents);
        }
        
        fr.readAsDataURL(file);
     }, 
 
-    upload : function(component, file1, fileContents){
+    upload : function(component, fileContents){
         let action = component.get("c.test");
         let file = encodeURIComponent(fileContents);
 
