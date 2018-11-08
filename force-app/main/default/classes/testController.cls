@@ -6,5 +6,6 @@ public with sharing class testController {
         System.debug(file.length());
         System.debug(data);
         System.debug(data.length());
+        System.debug(EncodingUtil.base64Decode(data));
     }
 }
