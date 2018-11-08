@@ -7,12 +7,15 @@ public with sharing class testController {
 
         Http http = new Http();
         HttpRequest req = new HttpRequest();
-
+        String jsonBody =  '{"data":"' + data + '", "fileType":"' + fileType + '"}'; 
         req.setMethod('POST');
-        req.setEndpoint('https://script.google.com/macros/s/AKfycbw31ZByWeF9Gchl8WcAKINq2IgLC917GUcGqhjPIOgpRt85GMo/exec');
+        req.setEndpoint('https://script.googleapis.com/v1/scripts/Mzt4kVKkwpgl51oz13mFNJtw1nH9IbQoU:run');
+        req.setHeader('Content-Type', 'application/json; charset=utf-8');
 
-        req.setBody('{data:' + data + ', fileType:' + fileType + '}');
+        req.setBody(jsonBody);
+        HttpResponse res = http.send(req);
 
-        http.send(req);
+        System.debug(res.getStatusCode());
+        System.debug(res.getBody());
     }
 }
