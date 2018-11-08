@@ -18,7 +18,7 @@
     upload : function(component, fileContents){
         let action = component.get("c.test");
         let file = encodeURIComponent(fileContents);
-
+        console.log(`${file.length}   ${fileContents.length}`)
         action.setParams({file});
         $A.enqueueAction(action);
 
