@@ -1,6 +1,6 @@
 public with sharing class SchedulesDemo {
     public SchedulesDemo() {
-        List<Object> schs = insertRecords();
+        List<Schedule__c> schs = insertRecords();
         schedule(schs);
     }
 
@@ -16,10 +16,15 @@ public with sharing class SchedulesDemo {
         return schs;
     }
 
-    private static schedule(List<Object> schs){
-        for (Object sch : schs){
+    private void schedule(List<Schedule__c> schs){
+        for (Schedule__c sch : schs){
+            Datetime review = sch.When__c;
+            String cron = '* ' + review.minute() + ' '  + review.hour() + ' ' + review.day() + ' ' + review.month() + ' ?';
+            System.debug(cron);
 
+            system.schedule(sch.Id, cron, new schedJon());
         }
     }
+
 
 }
